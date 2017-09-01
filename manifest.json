@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "tab2desktop",
-  "version": "0.0.1 beta",
+  "version": "0.0.2",
   "description": "Chrome extension for opening tabs on your desktop pc from your chrome mobile browser",
   "minimum_chrome_version": "23.0",
   "background": {
