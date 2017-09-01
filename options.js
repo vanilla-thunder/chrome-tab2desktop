@@ -7,8 +7,15 @@ angular.module('app', []).controller('ctrl', function ($scope) {
     };
     $scope.folder = "";
     chrome.bookmarks.getTree(function (results) {
-        console.log(results[0].children);
         $scope.cfg.tree = results[0].children;
         $scope.$apply();
     });
+    chrome.storage.sync.get('selected', function(data) {
+        $scope.cfg.selected = data.selected;
+        $scope.$apply();
+    });
+
+    $scope.save = function() {
+        chrome.storage.sync.set({'selected': $scope.cfg.selected}, function() { });
+    };
 });
