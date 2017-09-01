@@ -9,23 +9,19 @@
 <body ng-app='app' ng-controller="ctrl" ng-cloak>
 <div class="container">
 
-   <h2>please choose bookmark folder to track</h2>
+   <h3>bookmark folder to track:</h3>
    <div ng-repeat="a in cfg.tree">
-      <label><input type="radio" name="folder" ng-model="cfg.selected" value="{{a.id}}"/>&nbsp;{{ a.title }}</label>
+      <label><input type="radio" name="folder" ng-model="cfg.selected" ng-change="save();" value="{{a.id}}"/>&nbsp;{{ a.title }}</label>
       <div ng-repeat="b in a.children | filter:{ url:'!'}">
-         <label>&nbsp;&nbsp;-&nbsp;&nbsp;<input type="radio" name="folder" ng-model="cfg.selected" value="{{b.id}}"/>&nbsp;{{ b.title }}</label>
+         <label>&nbsp;&nbsp;-&nbsp;&nbsp;<input type="radio" name="folder" ng-model="cfg.selected" ng-change="save();" value="{{b.id}}"/>&nbsp;{{ b.title }}</label>
          <div ng-repeat="c in b.children | filter:{ url:'!'}">
-            <label>&nbsp;&nbsp;-&nbsp;&nbsp;-&nbsp;&nbsp;<input type="radio" name="folder" ng-model="cfg.selected" value="{{c.id}}"/>&nbsp;{{ c.title }}</label>
+            <label>&nbsp;&nbsp;-&nbsp;&nbsp;-&nbsp;&nbsp;<input type="radio" name="folder" ng-model="cfg.selected" ng-change="save();" value="{{c.id}}"/>&nbsp;{{ c.title }}</label>
             <div ng-repeat="d in c.children | filter:{ url:'!'}">
-               <label>&nbsp;&nbsp;-&nbsp;&nbsp;-&nbsp;&nbsp;-&nbsp;&nbsp;<input type="radio" name="folder" ng-model="cfg.selected" value="{{d.id}}"/>&nbsp;{{ d.title }}</label>
+               <label>&nbsp;&nbsp;-&nbsp;&nbsp;-&nbsp;&nbsp;-&nbsp;&nbsp;<input type="radio" name="folder" ng-model="cfg.selected" ng-change="save();" value="{{d.id}}"/>&nbsp;{{ d.title }}</label>
             </div>
          </div>
       </div>
    </div>
-   <pre>
-      {{ cfg.selected | json }}
-   </pre>
-
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
