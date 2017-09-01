@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "tab2desktop",
-  "version": "0.0.1",
+  "version": "0.0.1 beta",
   "description": "Chrome extension for opening tabs on your desktop pc from your chrome mobile browser",
   "minimum_chrome_version": "23.0",
   "background": {
@@ -13,7 +13,6 @@
   "options_ui": {
     "page": "options.html",
     "chrome_style": true
-    //,"open_in_tab": true
   },
   "permissions": [
     "tabs",
